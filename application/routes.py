@@ -124,7 +124,7 @@ def create_post():
         return jsonify({"Error ": "Error in creating post"}), StatusCode.BAD_REQUEST.value
 
 
-@app.route('/getmypost', methods = ['GET'])
+@app.route('/getmypost', methods=['GET'])
 @cross_origin()
 @authorized
 def get_my_post():
@@ -170,9 +170,9 @@ def edit_profile():
         social_user.age = age
         social_user.gender = gender
         db.session.commit()
-        return jsonify({"Success":"Profile updated successfully"}), StatusCode.OK.value
+        return jsonify({"Success": "Profile updated successfully"}), StatusCode.OK.value
     except Exception as e:
-        return jsonify({"Error":"Error in updating profile"}), StatusCode.BAD_REQUEST.value
+        return jsonify({"Error": "Error in updating profile"}), StatusCode.BAD_REQUEST.value
 
 
 @app.route('/getposts', methods=['GET'])
